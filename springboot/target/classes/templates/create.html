@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Page for IST 402</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+    <form action="#" th:action="@{/create}" th:object="${teacher}" method="post">
+        <!--<p>Message: <input type="text" th:field="*{name}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>-->
+        <div class="form-group">
+            <label for="professorDDL">Select a Professor to Rate</label>
+            <select class="form-control" id="professorDDL" th:field="*{name}">
+                <div>
+                    <option disabled="true" selected="selected" value="">Select</option>
+                    <option value="Soby Chacko">Soby Chacko</option>
+                    <option value="Taghi Ozbeki">Taghi Ozbeki</option>
+                    <option value="Jim Clarke">Jim Clarke</option>
+                    <option value="Joe Oakes">Joe Oakes</option>
+                </div>
+            </select>
+            <!--<label for="professorName">Enter Professor's Name</label>
+            <input id="professorName" class="form-control" type="text" th:field="*{name}" />-->
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-3">
+                    <label>Was this an elective?</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="radio" id="isNo" name="hope" th:field="*{isElective}" value="0"/>
+                    <label for="isNo">No</label>
+                    <input type="radio" id="isYes" name="hope" th:field="*{isElective}" value="1"/>
+                    <label for="isYes">Yes</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-3">
+                    <label>What grade do you expect?</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="radio" id="gradeF" name="grade" th:field="*{gradeExpected}" value="0"/>
+                    <label for="gradeF">F</label>
+                    <input type="radio" id="gradeD" name="grade" th:field="*{gradeExpected}" value="1"/>
+                    <label for="gradeD">D</label>
+                    <input type="radio" id="gradeC" name="grade" th:field="*{gradeExpected}" value="2"/>
+                    <label for="gradeC">C</label>
+                    <input type="radio" id="gradeB" name="grade" th:field="*{gradeExpected}" value="3"/>
+                    <label for="gradeC">B</label>
+                    <input type="radio" id="gradeA" name="grade" th:field="*{gradeExpected}" value="4"/>
+                    <label for="gradeA">A</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-3">
+                    <label>How would you rate the quality of the course?</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="radio" id="courseF" name="course" th:field="*{courseQuality}" value="0"/>
+                    <label for="courseF">0</label>
+                    <input type="radio" id="courseD" name="course" th:field="*{courseQuality}" value="1"/>
+                    <label for="courseD">1</label>
+                    <input type="radio" id="courseC" name="course" th:field="*{courseQuality}" value="2"/>
+                    <label for="courseC">2</label>
+                    <input type="radio" id="courseB" name="course" th:field="*{courseQuality}" value="3"/>
+                    <label for="courseC">3</label>
+                    <input type="radio" id="courseA" name="course" th:field="*{courseQuality}" value="4"/>
+                    <label for="courseA">4</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-3">
+                    <label>How would you rate the quality of the Professor?</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="radio" id="professorF" name="professor" th:field="*{professorQuality}" value="0"/>
+                    <label for="professorF">0</label>
+                    <input type="radio" id="professorD" name="professor" th:field="*{professorQuality}" value="1"/>
+                    <label for="professorD">1</label>
+                    <input type="radio" id="professorC" name="professor" th:field="*{professorQuality}" value="2"/>
+                    <label for="professorC">2</label>
+                    <input type="radio" id="professorB" name="professor" th:field="*{professorQuality}" value="3"/>
+                    <label for="professorB">3</label>
+                    <input type="radio" id="professorA" name="professor" th:field="*{professorQuality}" value="4"/>
+                    <label for="professorA">4</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-3">
+                    <label>How would you rate the examples given in class?</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="radio" id="exampleF" name="example" th:field="*{exampleEffectiveness}" value="0"/>
+                    <label for="exampleF">0</label>
+                    <input type="radio" id="exampleD" name="example" th:field="*{exampleEffectiveness}" value="1"/>
+                    <label for="exampleD">1</label>
+                    <input type="radio" id="exampleC" name="example" th:field="*{exampleEffectiveness}" value="2"/>
+                    <label for="exampleC">2</label>
+                    <input type="radio" id="exampleB" name="example" th:field="*{exampleEffectiveness}" value="3"/>
+                    <label for="exampleB">3</label>
+                    <input type="radio" id="exampleA" name="example" th:field="*{exampleEffectiveness}" value="4"/>
+                    <label for="exampleA">4</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-3">
+                    <label>How would you rate the Professor's Visual Skills?</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="radio" id="visualF" name="visual" th:field="*{visualSkill}" value="0"/>
+                    <label for="visualF">0</label>
+                    <input type="radio" id="visualD" name="visual" th:field="*{visualSkill}" value="1"/>
+                    <label for="visualD">1</label>
+                    <input type="radio" id="visualC" name="visual" th:field="*{visualSkill}" value="2"/>
+                    <label for="visualC">2</label>
+                    <input type="radio" id="visualB" name="visual" th:field="*{visualSkill}" value="3"/>
+                    <label for="visualB">3</label>
+                    <input type="radio" id="visualA" name="visual" th:field="*{visualSkill}" value="4"/>
+                    <label for="visualA">4</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-xs-3">
+                    <label>How would you rate the Professor's Lectures compared to Real Life Applicability?</label>
+                </div>
+                <div class="col-xs-9">
+                    <input type="radio" id="realF" name="real" th:field="*{realLifePracticality}" value="0"/>
+                    <label for="realF">0</label>
+                    <input type="radio" id="realD" name="real" th:field="*{realLifePracticality}" value="1"/>
+                    <label for="realD">1</label>
+                    <input type="radio" id="realC" name="real" th:field="*{realLifePracticality}" value="2"/>
+                    <label for="realC">2</label>
+                    <input type="radio" id="realB" name="real" th:field="*{realLifePracticality}" value="3"/>
+                    <label for="realB">3</label>
+                    <input type="radio" id="realA" name="real" th:field="*{realLifePracticality}" value="4"/>
+                    <label for="realA">4</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <input type="submit" value="Submit!!" class="btn btn-success"/>
+            </div>
+            <div class="col-xs-6">
+                <a href="/index"><button type="button" class="btn btn-warning">Go Back to Index</button></a>
+            </div>
+        </div>
+    </form>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("input[type=radio]").css("margin","10px");
+    });
+</script>
+</body>
+</html>

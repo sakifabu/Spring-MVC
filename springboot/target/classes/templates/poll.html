@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Confirmation Page for IST 402</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+    <form action="#" th:action="@{/getInfo}" th:object="${select}" method="post">
+        <!--<p>Message: <input type="text" th:field="*{name}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>-->
+        <div class="form-group">
+            <label for="professorDDL">Select a Professor to Rate</label>
+            <select class="form-control" id="professorDDL" th:field="*{nameSelected}">
+                <div>
+                    <option disabled="true" selected="selected" value="">Select</option>
+                    <option value="Soby Chacko">Soby Chacko</option>
+                    <option value="Taghi Ozbeki">Taghi Ozbeki</option>
+                    <option value="Jim Clarke">Jim Clarke</option>
+                    <option value="Joe Oakes">Joe Oakes</option>
+                </div>
+            </select>
+            <!--<label for="professorName">Enter Professor's Name</label>
+            <input id="professorName" class="form-control" type="text" th:field="*{name}" />-->
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" type="submit">See how they did!</button>
+        </div>
+    </form>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("input[type=radio]").css("margin","10px");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Seeing what user typed in</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'The teacher you typed was: ' + ${teacherProject.name}" />
+<p th:text="'Is Elective?: ' + ${teacherProject.isElective}"/>
+<p th:text="'Grade' + ${teacherProject.gradeExpected}"/>
+<p th:text="'Course' + ${teacherProject.courseQuality}"/>
+<p th:text="'Professor' + ${teacherProject.professorQuality}"/>
+<p th:text="'Example' + ${teacherProject.exampleEffectiveness}"/>
+<p th:text="'Visual' + ${teacherProject.visualSkill}"/>
+<p th:text="'Real' + ${teacherProject.realLifePracticality}"/>
+<a href="/create">Create another poll</a>
+</body>
+</html>

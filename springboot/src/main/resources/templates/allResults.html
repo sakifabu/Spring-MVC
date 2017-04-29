@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Confirmation Page for IST 402</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1> <p th:text="'Information for ' + ${something.name}"/></h1>
+    </div>
+    <!--<div class="row">
+        <p th:text="'id: ' + ${something.name}" />
+        <p th:text="'Number of Students that took the class as an Elective: %' + ${something.isElective}"/>
+        <p th:text="'The average grade expected: ' + ${something.theGrade} + '%'"/>
+    </div>-->
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>The Survey</th>
+                <th>Numbers Produced</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Percentage of Students that took the class as an Elective</td>
+                <td><p th:text="${something.isElective} + '%'"/></td>
+            </tr>
+            <tr>
+                <td>Average Grade the Students Expect they will receive</td>
+                <td><p th:text="${something.theGrade}"/></td>
+            </tr>
+            <tr>
+                <td>Average Rating of the quality of the Course</td>
+                <td><p th:text="${something.courseQuality}"/></td>
+            </tr>
+            <tr>
+                <td>Average Rating of the Professor</td>
+                <td><p th:text="${something.professorQuality}"/></td>
+            </tr>
+            <tr>
+                <td>Average Rating of the Effectiveness of Examples</td>
+                <td><p th:text="${something.exampleEffectiveness}"/></td>
+            </tr>
+            <tr>
+                <td>Average Rating of the Professor's Visual Skills</td>
+                <td><p th:text="${something.visualSkill}"/></td>
+            </tr>
+            <tr>
+                <td>Average Rating of the Course's Real Life Practicality</td>
+                <td><p th:text="${something.realLifePracticality}"/></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("input[type=radio]").css("margin","10px");
+    });
+</script>
+</body>
+</html>
